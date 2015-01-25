@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Location {
@@ -13,6 +15,10 @@ public class Location {
 	
 	private double latitude;
 	private double longtitude;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
 	
 	public double getLatitude() {
 		return latitude;
@@ -28,5 +34,13 @@ public class Location {
 
 	public void setLongtitude(double longtitude) {
 		this.longtitude = longtitude;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+	
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

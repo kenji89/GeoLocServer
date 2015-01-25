@@ -22,7 +22,7 @@ public class User {
 	@NotNull
 	private String password;
 	
-	@OneToMany
+	@OneToMany(mappedBy="user")
 	private List<Location> locations;
 
 	public String getUsername() {
