@@ -1,29 +1,17 @@
 package hello;
 
-import java.util.List;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
-
-@Entity
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private String id;
 	
-	@NotNull
 	private String username;
 	
-	@NotNull
 	private String password;
 	
-	@OneToMany(mappedBy="user")
-	private List<Location> locations;
+	private Location location;
 
 	public String getUsername() {
 		return username;
@@ -40,12 +28,12 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public List<Location> getLocations() {
-		return locations;
+	
+	public Location getLocation() {
+		return location;
 	}
 	
-	public void setLocations(List<Location> locations) {
-		this.locations = locations;
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 }

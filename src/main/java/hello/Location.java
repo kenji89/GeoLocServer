@@ -1,24 +1,22 @@
 package hello;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import java.util.Date;
 
-@Entity
+import javax.xml.crypto.Data;
+
+import org.springframework.data.annotation.Id;
+
 public class Location {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private String id;
 	
 	private double latitude;
 	private double longtitude;
+	private Date timestamp;
 	
-	@ManyToOne
-	@JoinColumn(name="user_id")
-	private User user;
+	public Location() {
+		this.timestamp = new Date();
+	}
 	
 	public double getLatitude() {
 		return latitude;
@@ -36,11 +34,11 @@ public class Location {
 		this.longtitude = longtitude;
 	}
 	
-	public User getUser() {
-		return user;
+	public Date getTimestamp() {
+		return timestamp;
 	}
 	
-	public void setUser(User user) {
-		this.user = user;
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 }
