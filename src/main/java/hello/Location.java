@@ -2,14 +2,7 @@ package hello;
 
 import java.util.Date;
 
-import javax.xml.crypto.Data;
-
-import org.springframework.data.annotation.Id;
-
 public class Location {
-	@Id
-	private String id;
-	
 	private double latitude;
 	private double longtitude;
 	private Date timestamp;

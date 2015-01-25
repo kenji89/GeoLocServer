@@ -1,5 +1,9 @@
 package hello;
 
+import javax.persistence.Column;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 
 public class User {
@@ -7,8 +11,13 @@ public class User {
 	@Id
 	private String id;
 	
+	@NotNull
+	@Column(unique = true)
+	@Min(value = 6)
 	private String username;
 	
+	@NotNull
+	@Min(value = 8)
 	private String password;
 	
 	private Location location;
