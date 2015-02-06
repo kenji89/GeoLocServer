@@ -1,1 +1,1 @@
-java -jar target/GeoLocServer-0.1.0.jar
+java -jar ~/GeoLocServer/target/GeoLocServer-0.1.0.jar
